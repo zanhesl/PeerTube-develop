@@ -1,0 +1,11 @@
+@import '_variables';
+@import '_mixins';
+
+.root {
+  font-size: 15px;
+
+  code {
+    font-size: 14px;
+    font-weight: $font-semibold;
+  }
+}

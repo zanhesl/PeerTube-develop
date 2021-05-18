@@ -1,0 +1,58 @@
+@import '_variables';
+@import '_mixins';
+
+.action-selection-mode {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.action-selection-mode-child {
+  position: fixed;
+
+  .action-button {
+    display: block;
+    margin-left: 55px;
+  }
+}
+
+.action-button-cancel-selection {
+  @include peertube-button;
+  @include grey-button;
+}
+
+.video {
+  @include row-blocks($column-responsive: false);
+
+  &:first-child {
+    margin-top: 47px;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 12px;
+  }
+
+  my-video-miniature {
+    flex-grow: 1;
+  }
+}
+
+
+@include on-small-main-col {
+  .video {
+    flex-wrap: wrap;
+  }
+}
+
+@include on-mobile-main-col {
+  .checkbox-container {
+    display: none;
+  }
+
+  .action-selection-mode {
+    display: none; // disable for small screens
+  }
+}
